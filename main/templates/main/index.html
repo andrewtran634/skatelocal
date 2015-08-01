@@ -12,19 +12,15 @@
 		<div id = "layer">
 			<div id = "user">
 				<h1>Skate Local</h1>
-				<br>
-				<br>
 				<p>find local skate shops/products around you!</P>
-				<br>
-				<br>
+				<form action = '{url main:find}' method = "POST" id = 'form'>
 				<div id = "zip">
 					<textarea rows = "1" cols = "14" id = "enter" placeholder = "enter zip code"></textarea>
 				</div>
 				<div id = "btn">
-					<button id = "press">
-						find shops
-					</button>
+					<input type = 'submit' value = "find shops" id = "press">
 				</div>
+				</form>
 			</div>
 		</div>	
 	</div>
@@ -35,7 +31,7 @@
 	</div>
 	
 	<script>
-		$(document).ready(function() {
+		/*$(document).ready(function() {
 			$('#reveal').hide();
 			$('#btn').click(function() {
 				if($("textarea").val().length) {
@@ -63,7 +59,7 @@
 					}
 				}
 			});
-		});
+		});*/
 	</script>
 </body>
 </ntml>
