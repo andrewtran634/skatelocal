@@ -1,9 +1,29 @@
 <h1>
 	Results
 </h1>
-
+{% if shoplist %}
 <div id = "shops">
-{{ data }}
+{% for shop in shoplist %}
 
-{{ search }}
+	{% if shop.0 != 'Zumiez' %}
+	<div id = "shop">
+
+		<div id = "name">
+			{{ shop.0 }}
+		</div>
+
+		<div id = "address">
+			{{ shop.1 }}
+		</div>
+
+		<br>
+	</div>	
+	{% endif %}
+{% endfor %}
+
+{% else %}
+<div id = "noshops">
+	No Shops Found.
+</div>
+{% endif %}
 </div>

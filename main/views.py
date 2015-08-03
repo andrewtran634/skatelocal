@@ -20,9 +20,20 @@ KEYWORDS = 'skate+shop+'
 def index(request):
 	return render(request, 'main/index.html')
 def find(request):
-	zcode = request.GET['zip']
+	zcode = request.GET['location']
 	search = SEARCHURL + KEYWORDS + zcode + GOOGKEY
 	page =  urllib.urlopen(search)
 	jsonRaw = page.read()
 	data = json.loads(jsonRaw)
-	return render(request, 'main/results.html', {'data' : data, 'search' : search})
+
+	shoplist = []
+	infolist = []
+
+	biglist = data['results']
+	for shops in biglist:
+		infolist = []
+		infolist.append(shops['name'])
+		infolist.append(shops['formatted_address'])
+		#shops['formatted_address']
+		shoplist.append(infolist)
+	return render(request, 'main/results.html', {'shoplist' : shoplist})
