@@ -1,23 +1,24 @@
-<h1>
-	Results
-</h1>
+{% extends "main/index.html" %}
+{% block results %}
 {% if shoplist %}
 <div id = "shops">
 {% for shop in shoplist %}
 
 	{% if shop.0 != 'Zumiez' %}
-	<div id = "shop">
+	<a href = "https://www.google.com/maps/dir/My+Location/{{ shop.1 }}" target = "_blank">
+		<div id = "shop">
 
-		<div id = "name">
-			{{ shop.0 }}
-		</div>
+			<div id = "name">
+				{{ shop.0 }}
+			</div>
 
-		<div id = "address">
-			{{ shop.1 }}
-		</div>
+			<div id = "address">
+				{{ shop.1 }}
+			</div>
 
-		<br>
-	</div>	
+			<br>
+		</div>	
+	</a>
 	{% endif %}
 {% endfor %}
 
@@ -27,3 +28,4 @@
 </div>
 {% endif %}
 </div>
+{% endblock %}

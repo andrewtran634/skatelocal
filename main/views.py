@@ -20,7 +20,7 @@ KEYWORDS = 'skate+shop+'
 def index(request):
 	return render(request, 'main/index.html')
 def find(request):
-	zcode = request.GET['location']
+	zcode = request.POST['location']
 	search = SEARCHURL + KEYWORDS + zcode + GOOGKEY
 	page =  urllib.urlopen(search)
 	jsonRaw = page.read()
