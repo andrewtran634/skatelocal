@@ -8,14 +8,14 @@ import pprint
 import sys
 import urllib
 import urllib2
-
+#import re
 import oauth2
 
 
 GOOGKEY = '&key=AIzaSyBmu-0gJXE0CMNQRYnXeLCM_oN2_WXSR7E'
 SEARCHURL = 'https://maps.googleapis.com/maps/api/place/textsearch/json?query='
 KEYWORDS = 'skate+shop+'
-
+#MATCH = re.compile("(BOARD)|((SKATE)(.))")
 # Create your views here.
 def index(request):
 	return render(request, 'main/index.html')
